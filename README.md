@@ -33,6 +33,10 @@ sudo vim config.json
 ```
 server必须是0.0.0.0，否则连不上，端口密码啥的自己改，fase_open和prefer_ipv6这两个参数写为false就行了
 
+开启SSR服务
+```
+sudo ssserver -c /etc/shadowsocks/config.json -d start
+```
 
 ## 4.BBR加速
 
