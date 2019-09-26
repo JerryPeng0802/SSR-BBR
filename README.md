@@ -5,13 +5,13 @@
 ## 2.使用包安装安装shadowsocks
 ```
 sudo apt update
-sudo apt apgrade
+sudo apt upgrade
 sudo apt install shadowsocks
 ```
 
 ## 3.通过apt安装的shadowsocks他的配置文件在/etc/shadowsocks下
 ```
-cd /etc/shadowdocks
+cd /etc/shadowscd sha   ocks
 sudo vim config.json
 
 ```
