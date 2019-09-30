@@ -11,7 +11,7 @@ sudo apt install shadowsocks
 
 ## 3.通过apt安装的shadowsocks他的配置文件在/etc/shadowsocks下
 ```
-cd /etc/shadowscd sha   ocks
+cd /etc/shadowscd shasocks
 sudo vim config.json
 
 ```
