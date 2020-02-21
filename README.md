@@ -53,6 +53,13 @@ sudo ./bbr.sh
 去实例界面把里面安全组全部打开就行了，包括TCP，UDP，ICMP等等
 
 
+## 6.谷歌学术无法访问的问题，
 
+首先要确保当前vps支持IPv6，然后打开https://raw.githubusercontent.com/lennylxx/ipv6-hosts/master/hosts ，找到谷歌学术，这里
+下载下来在搜索比较好。
+
+sudo vim /etc/hosts
+
+将里面关于shcolar的内容复制在后面就行了
 
 
