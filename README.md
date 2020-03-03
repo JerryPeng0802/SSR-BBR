@@ -60,6 +60,6 @@ sudo ./bbr.sh
 
 sudo vim /etc/hosts
 
-将里面关于shcolar的内容复制在后面就行了
+将里面关于scholar的内容复制在后面就行了
 
 
