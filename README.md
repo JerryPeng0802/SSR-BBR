@@ -6,12 +6,12 @@
 ```
 sudo apt update
 sudo apt upgrade
-sudo apt install shadowsocks
+sudo apt install shadowsocks-libv
 ```
 
 ## 3.通过apt安装的shadowsocks他的配置文件在/etc/shadowsocks下
 ```
-cd /etc/shadowscocks
+cd /etc/shadowscocks-libv
 sudo vim config.json
 
 ```
@@ -35,9 +35,20 @@ server必须是0.0.0.0，否则连不上，端口密码啥的自己改，fase_op
 
 开启SSR服务
 ```
-sudo ssserver -c /etc/shadowsocks/config.json -d start
+sudo systemctl start shadowsocks-libev
 ```
 
+开启SSR的开机自启动
+```
+sudo systemctl enable shadowsocks-libev
+```
+
+查看是否设置设置成功
+
+```
+sudo systemctl list-unit-files | grep shadowsocks
+
+```
 ## 4.BBR加速
 
 google的一个加速算法，挺好用的
@@ -47,7 +58,30 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 sudo chmod +x bbr.sh
 sudo ./bbr.sh
 ```
+实际上最新的ubuntu，不需要下载这个脚本可以使用如下方法：
 
+修改环境变量
+```
+sudo bash -c 'echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf'
+
+sudo bash -c 'echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf'
+
+```
+保存配置生效
+```
+sysctl -p
+```
+
+查看是否开启bbr
+
+```
+sysctl net.ipv4.tcp_available_congestion_control
+```
+如果返回的是
+```
+net.ipv4.tcp_available_congestion_control = reno cubic bbr
+```
+那就可以了
 ## 5.设置安全组
 
 去实例界面把里面安全组全部打开就行了，包括TCP，UDP，ICMP等等
