@@ -89,7 +89,7 @@ net.ipv4.tcp_available_congestion_control = reno cubic bbr
 
 ## 6.谷歌学术无法访问的问题，
 
-首先要确保当前vps支持IPv6，然后打开https://raw.githubusercontent.com/lennylxx/ipv6-hosts/master/hosts ，找到谷歌学术，这里
+首先要确保当前vps支持IPv6，然后打开https://github.com/popcorner/cernet-ipv6-hosts ，找到谷歌学术，这里
 下载下来在搜索比较好。
 
 sudo vim /etc/hosts
