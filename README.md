@@ -6,12 +6,12 @@
 ```
 sudo apt update
 sudo apt upgrade
-sudo apt install shadowsocks-libv
+sudo apt install shadowsocks-libev
 ```
 
 ## 3.通过apt安装的shadowsocks他的配置文件在/etc/shadowsocks下
 ```
-cd /etc/shadowscocks-libv
+cd /etc/shadowsocks-libev
 sudo vim config.json
 
 ```
